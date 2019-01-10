@@ -1,6 +1,5 @@
 import heapq
 
-
 class Cell(object):
     def __init__(self, x, y, reachable):
         """Initialize new cell.
@@ -20,6 +19,9 @@ class Cell(object):
         self.g = 0
         self.h = 0
         self.f = 0
+
+    def __lt__(self, other):
+        return self.f < other.f
 
 
 class AStar(object):
